@@ -66,10 +66,15 @@ class Solver():
 
 def main():
     board = Board("board.csv")
+    print("Given board:")
+    print()
     board.print_board()
 
     solver = Solver(board)
     solver.solve()
+    print()
+    print("Solution:")
+    print()
     solver.board.print_board()
     pd.DataFrame(solver.board.data).to_csv("solution.csv", header=False, index=False)
 
